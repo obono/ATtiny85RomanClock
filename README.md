@@ -33,6 +33,8 @@ It returns to normal mode by holding the button for over 2 seconds again.
 
 [![Click to expand](doc/schematic_thumbnail.png)](doc/schematic.png)
 
+For accurate timekeeping, the CPU clock is driven by an external crystal oscillator circuit.
+
 The current time is indicated by 16 LEDs arranged in a ring.
 The mapping of Roman numerals is shown as follows.
 The first 6 are assigned to hours and the remaining 10 are assigned to minutes.
@@ -65,6 +67,8 @@ millis()/micros()|Enabled
 This sketch depends on following library. (You can add this by library manager)
 
 * [Adafruit NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel)
+
+Be careful. The external oscillator circuit is required for programming both the bootloader and the sketches.
 
 Usually the interval between each `loop()` function call is 125 ms (= one eighth of a second), but it's 126 ms once every 85 loops in my case.
 This may be affected by the circuit conditions.
